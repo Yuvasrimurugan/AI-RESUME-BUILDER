@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Resume Builder</title> 
+  <link rel="stylesheet" href="builder.css" />
+</head>
+<!-- PDF LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<body>
+<div class="container">
+  <!-- LEFT FORM -->
+  <div class="form-section">
+    <h1>AI Resume Builder</h1>
+    <p class="powered">Create ATS compliant resume for free</p>  
+    <select id="role" required>
+      <option>Web Developer</option>
+      <option>Mobile Developer</option>
+      <option>Software Engineer</option>
+      <option>Data Analyst</option>
+      <option>Student / Fresher</option>
+      <option>Teacher</option>
+      <option>Marketing</option>
+      <option>Human Resource Manager</option>
+      <option>Banking</option>
+    </select>
+    <div>
+ <input type="text" id="name"
+        required
+        minlength="3"
+        maxlength="50"
+        pattern="^[A-Za-z ]+$"
+        title="Only letters and spaces allowed (3-50 characters)" placeholder="Enter your name eg., YUVASRI M">
+    <br><br>
+
+    <input id="address" placeholder="Address" />
+    <input id="contact" placeholder="Email" required
+        maxlength="100"
+        />
+    <input id="contact1" placeholder="Phone"
+        pattern="[0-9]{10}"
+        minlength="10"
+        maxlength="10"/>
+    <textarea id="summaryInput" placeholder="Short summary about you"></textarea>   
+    </div>   
+<div id="experienceInputContainer">
+  <textarea class="experienceInput" placeholder="Add experiences"></textarea>
+  <button onclick="increaseCount()">+ Add Experience</button>
+  <script>
+    let experienceCount = 1;
+    function increaseCount() {
+       experienceInput++;
+  updateCount();
+}
+  </script>
+</div>  
+<div id="projectsInputContainer"> 
+  <textarea id="projectsInput" placeholder="Add projects"></textarea>  
+  <button onclick="addProject()">+ Add Project</button> 
+</div>
+    <textarea class="educationInput" placeholder="Add education details"></textarea>
+    <textarea id="skills" placeholder="Skills (comma separated)" required
+        minlength="5"
+        maxlength="200" pattern="^([A-Za-z+# ]+,?)+$"></textarea>
+    <button onclick="generateResume()">Generate Resume with AI</button>
+    <textarea
+  id="jobDescription"
+  placeholder="Paste Job Description here (required for ATS score)"
+  rows="6"
+></textarea>
+    <button onclick="calculateATS()">Check ATS Score</button>
+<div id="atsResult" class="ats-box"></div>
+  </div>
+  <!-- RIGHT PREVIEW -->
+  <div class="preview-section">
+    <button onclick="downloadPDF()">Download Resume (PDF)</button>
+    <div class="resume-header">
+  
+  <div>
+    <h1 id="previewName"></h1>
+    <p id="previewRole"></p>
+  </div>
+</div>
+    <div id="resumePreview" class="resume">
+      <p class="placeholder">Your resume will appear here</p>
+    </div>
+    <!-- JOB RECOMMENDATIONS -->
+<section id="jobSection">
+  <h3>Recommended Jobs</h3>
+  <button onclick="getJobRecommendations()">Get Job Recommendations</button>
+  <div id="jobResults"></div>
+</section>
+  </div>
+</div>
+<script src="builder.js"></script>
+</body>
+</html>

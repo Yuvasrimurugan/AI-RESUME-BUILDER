@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login / Signup</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      width: 320px;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    p {
+      text-align: center;
+      cursor: pointer;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2 id="title">Login</h2>
+
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button onclick="handleAuth()">Login</button>
+
+    <p onclick="toggle()">Don't have an account? Sign up</p>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    function toggle() {
+      isLogin = !isLogin;
+      document.getElementById("title").innerText = isLogin ? "Login" : "Sign Up";
+      document.querySelector("button").innerText = isLogin ? "Login" : "Sign Up";
+      document.querySelector("p").innerText =
+        isLogin ? "Don't have an account? Sign up" : "Already have an account? Login";
+    }
+
+    function handleAuth() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (isLogin) {
+        // LOGIN
+        if (users[email] === password) {
+          localStorage.setItem("loggedInUser", email);
+          window.location.href = "builder.html";
+        } else {
+          alert("Invalid credentials");
+        }
+      } else {
+        // SIGNUP
+        if (users[email]) {
+          alert("User already exists");
+          return;
+        }
+        users[email] = password;
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("loggedInUser", email);
+        window.location.href = "builder.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

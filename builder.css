@@ -1,0 +1,165 @@
+* 
+
+{
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Calibri, Arial, sans-serif;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.section h2 {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section p {
+  font-size: 10.8px;
+  line-height: 1.35;
+}
+.section {
+  margin-bottom: 8px;
+}
+
+p {
+  margin: 2px 0;
+}
+
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.form-section {
+  width: 45%;
+  padding: 40px;
+  background: white;
+}
+
+.preview-section {
+  width: 55%;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.powered {
+  color: #6b6bff;
+  margin-bottom: 20px;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #6b6bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.download {
+  background: #10b981;
+  margin-bottom: 20px;
+}
+
+.resume {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.resume h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.resume .contact {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.resume h3 {
+  border-bottom: 1px solid #ddd;
+  margin-top: 20px;
+}
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+.ats-box {
+  margin-top: 12px;
+  padding: 14px;
+  background: #f0fdf4;
+  border-left: 5px solid #22c55e;
+  font-size: 14px;
+  white-space: pre-line;
+}
+#jobResults {
+  margin-top: 20px;
+}
+
+.job-card {
+  border: 1px solid #e1e1e1;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: #ffffff;
+}
+
+.job-card h4 {
+  margin: 0 0 6px;
+}
+
+.job-card a {
+  color: #5a5ff0;
+  font-weight: 600;
+  text-decoration: none;
+}
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.resume-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+  display: none;
+}
+
+
+
+
+
+
+
+
