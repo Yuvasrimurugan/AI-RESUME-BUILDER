@@ -5,7 +5,7 @@
    AI CONFIG (INTERNAL USE ONLY)
 ================================ */
 const OPENROUTER_API_KEY =
-  "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";
+  "Your openrouter key";
 
 /* ===============================
    AUTH CHECK (NORMAL LOGIN)
@@ -377,7 +377,7 @@ async function getJobRecommendations() {
     "<p>Fetching real-time jobs...</p>";
 
   const APP_ID = "2fc00331";
-  const API_KEY = "31f165c12bc27c3a8f9bc59e847436d6";
+  const API_KEY = "Your adzuna api key";
 
   const url = `https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=${APP_ID}&app_key=${API_KEY}&results_per_page=5&what=${role}`;
 
