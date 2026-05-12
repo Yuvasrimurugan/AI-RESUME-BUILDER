@@ -5,7 +5,7 @@
    AI CONFIG (INTERNAL USE ONLY)
 ================================ */
 const OPENROUTER_API_KEY =
-  "Your openrouter key";
+  "Your_openrouter_key";
 
 /* ===============================
    AUTH CHECK (NORMAL LOGIN)
